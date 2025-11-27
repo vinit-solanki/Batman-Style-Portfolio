@@ -140,7 +140,7 @@ const App = () => {
     gradient: "from-orange-500 via-red-500 to-pink-500",
   },
   {
-    name: "Amrutam Pharmaceutical Landing Pages",
+    name: "Amrutam Landing Pages",
     tagline: "Asthetics meets Functionality",
     description:
       "Frontend of landing pages for various Ayurvedic products using Pure React.js and Tailwind CSS.",
