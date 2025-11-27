@@ -1,12 +1,22 @@
 @import "tailwindcss";
 
-body {
-  font-family: "Science Gothic", sans-serif !important;
-  font-optical-sizing: auto;
-  font-weight: 400;
+/* ===== Custom Batman Fonts ===== */
+
+@font-face {
+  font-family: "BatmanFontA";
+  src: url("/fonts/batmfa__.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "wdth" 100,
-    "CTRS" 0;
+}
+
+@font-face {
+  font-family: "BatmanFontO";
+  src: url("/fonts/batmfo__.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Set default global font */
+body {
+  font-family: "BatmanFontA", sans-serif;
 }

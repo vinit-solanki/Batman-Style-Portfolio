@@ -5,11 +5,11 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   theme: {
-    extend: {
-      fontFamily: {
-        science: ['"Science Gothic"', "sans-serif"],
-        raleway: ['"Raleway"', "sans-serif"],
-      },
+  extend: {
+    fontFamily: {
+      batmanA: ['"BatmanFontA"', "sans-serif"],
+      batmanO: ['"BatmanFontO"', "sans-serif"],
     },
   },
+}
 })
