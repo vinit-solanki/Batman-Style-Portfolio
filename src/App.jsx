@@ -93,7 +93,7 @@ const App = () => {
     name: "End-To-End Vendor Performance Analytics",
     tagline: "Data Analysis at Production Scale",
     description:
-      "Data Analysis (Pandas+Numpy+Matplotlib/Seaborn) + Visualization (PowerBI) + Best Practices",
+      "Data Analysis + Best Practices",
     tech: [
       "Python",
       "Pandas",
@@ -260,7 +260,7 @@ const App = () => {
           width: "600px",
           height: "600px",
           background:
-            "radial-gradient(circle, rgba(168,85,247,0.4), rgba(59,130,246,0.2), transparent)",
+            "radial-gradient(circle, rgba(234, 228, 239, 0.4), rgba(59,130,246,0.2), transparent)",
           top: 0,
           left: 0,
           willChange: "transform",
@@ -488,13 +488,13 @@ const App = () => {
           <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
 
             <a href="mailto:2022.vinit.solanki@ves.ac.in" className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-              <Mail className="mx-auto mb-3 text-cyan-400" size={32} />
+              <Mail className="mx-auto mb-3 text-red-400" size={32} />
               <p className="text-sm text-gray-400">Email</p>
               <p className="text-white">2022.vinit.solanki@ves.ac.in</p>
             </a>
 
             <a href="tel:7977675112" className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-              <Phone className="mx-auto mb-3 text-purple-400" size={32} />
+              <Phone className="mx-auto mb-3 text-red-400" size={32} />
               <p className="text-sm text-gray-400">Phone</p>
               <p className="text-white">+91 7977675112</p>
             </a>
@@ -518,7 +518,7 @@ const App = () => {
               <Twitter size={24} />
             </a>
 
-            <a href="https://www.instagram.com/notanerd_005/" className="p-4 bg-white/5 border border-white/10 rounded-xl">
+            <a href="https://www.instagram.com/notanerd_005.jsx/" className="p-4 bg-white/5 border border-white/10 rounded-xl">
               <Instagram size={24} />
             </a>
           </div>
