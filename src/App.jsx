@@ -65,7 +65,7 @@ const App = () => {
     description:
       "Doctor booking system with AI chatbot (Dr.Ross) using BotPress & RazorPay.",
     tech: ["React.js", "Express.js", "MongoDB", "BotPress"],
-    github: "https://github.com/vinit-solanki",
+    github: "https://github.com/vinit-solanki/DocPlus",
     demo: "https://docplus-frontend.vercel.app/",
     gradient: "from-purple-500 via-pink-500 to-rose-500",
   },
@@ -75,7 +75,7 @@ const App = () => {
     description:
       "CrewAI-powered analysis with Gemini API and dynamic visualization.",
     tech: ["CrewAI", "Gemini API", "Pandas", "Streamlit"],
-    github: "https://github.com/vinit-solanki",
+    github: "https://github.com/vinit-solanki/DataCrewAI",
     demo: "#",
     gradient: "from-purple-500 via-pink-500 to-rose-500",
   },
