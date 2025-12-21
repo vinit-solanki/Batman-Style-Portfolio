@@ -274,47 +274,51 @@ const App = () => {
       <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
 
         {/* Background image (PUBLIC FOLDER) */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
-          style={{ backgroundImage: "url('/batman-bg.jpg')" }}
-        ></div>
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+            style={{ backgroundImage: "url('/batman-bg.jpg')" }}
+          ></div>
 
-        <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
 
-        <div className="relative z-20 max-w-5xl w-full text-center space-y-8">
-          <div className="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full">
-            <span className="text-sm text-gray-300">Available for opportunities</span>
+          <div className="relative z-20 max-w-5xl w-full text-center space-y-8">
+            <div className="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full">
+              <span className="text-sm text-gray-300">Available for opportunities</span>
+            </div>
+
+            <h1 className="text-6xl md:text-8xl font-black tracking-tight">
+              Vinit Solanki
+            </h1>
+
+            <p className="text-2xl md:text-3xl text-gray-300">
+              AI Engineer × Full Stack Developer
+            </p>
+
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Building intelligent systems and scalable applications.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center pt-6">
+              <a href="#projects" className="group px-8 py-4 bg-white text-black rounded-full font-semibold">
+                View My Work
+                <ArrowUpRight className="inline ml-2 group-hover:-translate-y-1 transition" />
+              </a>
+
+              <a
+                href="#contact"
+                className="px-8 py-4 border border-white/20 rounded-full font-semibold hover:bg-white/5 transition"
+              >
+                Get In Touch
+              </a>
+              <a href="https://drive.google.com/file/d/1kyJjMYJmDsSfltg4GWW6NpHPlm_MPtsV/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="group px-8 py-4 bg-white text-black rounded-full font-semibold">
+                Resume
+                <ArrowUpRight className="inline ml-2 group-hover:-translate-y-1 transition" />
+              </a>
+            </div>
           </div>
+              </section>
 
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight">
-            Vinit Solanki
-          </h1>
-
-          <p className="text-2xl md:text-3xl text-gray-300">
-            AI Engineer × Full Stack Developer
-          </p>
-
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Building intelligent systems and scalable applications.
-          </p>
-
-          <div className="flex flex-wrap gap-4 justify-center pt-6">
-            <a href="#projects" className="group px-8 py-4 bg-white text-black rounded-full font-semibold">
-              View My Work
-              <ArrowUpRight className="inline ml-2 group-hover:-translate-y-1 transition" />
-            </a>
-
-            <a
-              href="#contact"
-              className="px-8 py-4 border border-white/20 rounded-full font-semibold hover:bg-white/5 transition"
-            >
-              Get In Touch
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================================================= */}
+              {/* ================================================================================================= */}
       {/* ========================================== SKILLS SECTION ====================================== */}
       {/* ================================================================================================= */}
 
