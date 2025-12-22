@@ -377,7 +377,7 @@ const App = () => {
             <p className="text-gray-200">Building solutions that matter</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
               <div key={idx} className="group relative p-8 bg-white/5 border border-white/10 rounded-3xl">
 
