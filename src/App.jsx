@@ -494,18 +494,12 @@ const App = () => {
             Open to internships, collaborations, and exciting projects.
           </motion.p>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-6 max-w-2xl mx-auto">
 
             <motion.a href="mailto:2022.vinit.solanki@ves.ac.in" className="p-6 bg-white/5 border border-white/10 rounded-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:bg-white/10" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true, margin: "0px 0px -100px 0px" }} whileHover={{ y: -8 }}>
               <Mail className="mx-auto mb-3 text-red-400" size={32} />
               <p className="text-sm text-gray-400">Email</p>
               <p className="text-white">2022.vinit.solanki@ves.ac.in</p>
-            </motion.a>
-
-            <motion.a href="tel:7977675112" className="p-6 bg-white/5 border border-white/10 rounded-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:bg-white/10" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} viewport={{ once: true, margin: "0px 0px -100px 0px" }} whileHover={{ y: -8 }}>
-              <Phone className="mx-auto mb-3 text-red-400" size={32} />
-              <p className="text-sm text-gray-400">Phone</p>
-              <p className="text-white">+91 7977675112</p>
             </motion.a>
           </div>
 
