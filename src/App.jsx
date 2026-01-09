@@ -17,6 +17,7 @@ import {
   Twitter,
   Instagram,
   Link2,
+  Server,
 } from "lucide-react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
@@ -193,7 +194,7 @@ const App = () => {
       color: "cyan",
     },
     {
-      icon: <Sparkles size={24} />,
+      icon: <Server size={24} />,
       title: "Web Development",
       skills: ["React.js", "Node.js", "Express.js", "Tailwind CSS", "REST APIs"],
       color: "purple",
@@ -336,7 +337,7 @@ const App = () => {
 
         <div className="relative max-w-6xl mx-auto">
           <motion.div className="text-center mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-            <h2 className="text-5xl md:text-6xl font-bold">Technical Arsenal</h2>
+            <h2 className="text-5xl md:text-6xl font-bold">Tech-Stack</h2>
             <p className="text-gray-200">Technologies I work with daily</p>
           </motion.div>
 
