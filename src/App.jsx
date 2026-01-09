@@ -16,6 +16,7 @@ import {
   Award,
   Twitter,
   Instagram,
+  Link2,
 } from "lucide-react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
@@ -120,15 +121,15 @@ const App = () => {
     gradient: "from-cyan-500 via-blue-500 to-indigo-500",
   },
   {
-    name: "AQI Forecasting System",
-    tagline: "Time Series Forecasting using XGBoost",
+    name: "High Frequency Trading Pipeline Simulation (C++)",
+    tagline: "C++ in action",
     description:
-      "XGBoost forecasting models for Mumbai AQI monitoring.",
-    tech: ["Python", "Time Series", "XGBoost"],
+      "a low-latency C++ simulation of a typical high-frequency trading execution pipeline.",
+    tech: ["C++", "OOP", "STL", "Algorithms"],
     github:
-      "https://github.com/vinit-solanki/AQI-Prediction-System-Using-XGBoost",
-    demo: "",
-    gradient: "from-orange-500 via-red-500 to-pink-500",
+      "https://github.com/vinit-solanki/C-OOPs/tree/main/hft-pipeline-sim",
+    demo: "#",
+    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
   },
   {
     name: "Streaming Website Frontend",
@@ -170,16 +171,16 @@ const App = () => {
     demo: "#",
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
   },
-  {
-    name: "Movie Ticket Booking System in C++",
-    tagline: "C++ in action",
+    {
+    name: "AQI Forecasting System",
+    tagline: "Time Series Forecasting using XGBoost",
     description:
-      "Role-based Movie Ticket Booking System using OOP concepts in C++.",
-    tech: ["C++", "OOP", "STL", "Algorithms"],
+      "XGBoost forecasting models for Mumbai AQI monitoring.",
+    tech: ["Python", "Time Series", "XGBoost"],
     github:
-      "https://github.com/vinit-solanki/Movie-Ticket-Booking-System",
-    demo: "#",
-    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
+      "https://github.com/vinit-solanki/AQI-Prediction-System-Using-XGBoost",
+    demo: "",
+    gradient: "from-orange-500 via-red-500 to-pink-500",
   },
 ];
 
@@ -494,12 +495,17 @@ const App = () => {
             Open to internships, collaborations, and exciting projects.
           </motion.p>
 
-          <div className="grid md:grid-cols-1 gap-6 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
 
             <motion.a href="mailto:2022.vinit.solanki@ves.ac.in" className="p-6 bg-white/5 border border-white/10 rounded-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:bg-white/10" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true, margin: "0px 0px -100px 0px" }} whileHover={{ y: -8 }}>
               <Mail className="mx-auto mb-3 text-red-400" size={32} />
               <p className="text-sm text-gray-400">Email</p>
               <p className="text-white">2022.vinit.solanki@ves.ac.in</p>
+            </motion.a>
+            <motion.a href="https://hashnode.com/@VinitSolanki05" className="p-6 bg-white/5 border border-white/10 rounded-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:bg-white/10" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true, margin: "0px 0px -100px 0px" }} whileHover={{ y: -8 }}>
+              <Link2 className="mx-auto mb-3 text-red-400" size={32} />
+              <p className="text-sm text-gray-400">Blog Writing</p>
+              <p className="text-white">HashNode.com</p>
             </motion.a>
           </div>
 
