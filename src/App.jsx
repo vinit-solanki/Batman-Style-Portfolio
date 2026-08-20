@@ -27,8 +27,9 @@ import somethingInTheWay from "./assets/Nirvana - Something In The Way (Remaster
 const App = () => {
   /* ------------------------ Background Music ------------------------ */
   const audioRef = useRef(null);
+  const musicBtnRef = useRef(null);
   const userPausedRef = useRef(false);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -38,32 +39,50 @@ const App = () => {
     audio.volume = 0.32;
 
     const tryPlay = () => {
-      if (userPausedRef.current) return;
-      audio
+      if (userPausedRef.current) return Promise.resolve(false);
+      return audio
         .play()
-        .then(() => setIsPlaying(true))
-        .catch(() => setIsPlaying(false));
+        .then(() => {
+          setIsPlaying(true);
+          return true;
+        })
+        .catch(() => {
+          setIsPlaying(false);
+          return false;
+        });
     };
 
     tryPlay();
 
-    const unlock = () => {
-      tryPlay();
-      window.removeEventListener("pointerdown", unlock);
-      window.removeEventListener("keydown", unlock);
+    const unlock = (e) => {
+      if (e?.target && musicBtnRef.current?.contains(e.target)) return;
+      tryPlay().then((started) => {
+        if (!started) return;
+        window.removeEventListener("pointerdown", unlock);
+        window.removeEventListener("keydown", unlock);
+        window.removeEventListener("touchstart", unlock);
+        window.removeEventListener("wheel", unlock);
+        window.removeEventListener("scroll", unlock);
+      });
     };
 
     window.addEventListener("pointerdown", unlock);
     window.addEventListener("keydown", unlock);
+    window.addEventListener("touchstart", unlock, { passive: true });
+    window.addEventListener("wheel", unlock, { passive: true });
+    window.addEventListener("scroll", unlock, { passive: true, capture: true });
 
     return () => {
       window.removeEventListener("pointerdown", unlock);
       window.removeEventListener("keydown", unlock);
-      audio.pause();
+      window.removeEventListener("touchstart", unlock);
+      window.removeEventListener("wheel", unlock);
+      window.removeEventListener("scroll", unlock);
     };
   }, []);
 
-  const toggleMusic = () => {
+  const toggleMusic = (e) => {
+    e.stopPropagation();
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -317,7 +336,9 @@ const App = () => {
 
       {/* Music toggle — bottom right */}
       <motion.button
+        ref={musicBtnRef}
         type="button"
+        onPointerDown={(e) => e.stopPropagation()}
         onClick={toggleMusic}
         aria-label={isPlaying ? "Pause music" : "Play music"}
         className="fixed bottom-6 right-6 z-50"
