@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Github,
   Linkedin,
@@ -18,10 +18,68 @@ import {
   Instagram,
   Link2,
   Server,
+  Pause,
+  Play,
 } from "lucide-react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import somethingInTheWay from "./assets/Nirvana - Something In The Way (Remastered).m4a";
 
 const App = () => {
+  /* ------------------------ Background Music ------------------------ */
+  const audioRef = useRef(null);
+  const userPausedRef = useRef(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.loop = true;
+    audio.volume = 0.32;
+
+    const tryPlay = () => {
+      if (userPausedRef.current) return;
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
+    };
+
+    tryPlay();
+
+    const unlock = () => {
+      tryPlay();
+      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("keydown", unlock);
+    };
+
+    window.addEventListener("pointerdown", unlock);
+    window.addEventListener("keydown", unlock);
+
+    return () => {
+      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("keydown", unlock);
+      audio.pause();
+    };
+  }, []);
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (!audio.paused) {
+      userPausedRef.current = true;
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      userPausedRef.current = false;
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
+    }
+  };
+
   /* ------------------------ Smooth Cursor Orb ------------------------ */
   const orbRef = useRef(null);
 
@@ -254,6 +312,36 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
+
+      <audio ref={audioRef} src={somethingInTheWay} preload="auto" />
+
+      {/* Music toggle — bottom right */}
+      <motion.button
+        type="button"
+        onClick={toggleMusic}
+        aria-label={isPlaying ? "Pause music" : "Play music"}
+        className="fixed bottom-6 right-6 z-50"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.94 }}
+      >
+        {isPlaying && (
+          <motion.span
+            className="absolute inset-0 rounded-full border border-white/30"
+            animate={{ scale: [1, 1.35], opacity: [0.5, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
+          />
+        )}
+        <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-black/70 backdrop-blur-md shadow-[0_0_28px_rgba(255,255,255,0.12)]">
+          {isPlaying ? (
+            <Pause size={20} className="fill-white text-white" />
+          ) : (
+            <Play size={20} className="ml-0.5 fill-white text-white" />
+          )}
+        </span>
+      </motion.button>
 
       {/* Smooth FOLLOWING ORB */}
       <div
